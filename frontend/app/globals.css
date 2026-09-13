@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1C2430;
+  --paper: #F3F2EA;
+  --paper-raised: #FBFAF5;
+  --saffron: #E8A33D;
+  --saffron-deep: #C97F1F;
+  --teal: #17494A;
+  --teal-soft: #2C6B6B;
+  --line: #DEDACB;
+  --danger: #B0432E;
+  --success: #3E7457;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-saffron: var(--saffron);
+  --color-saffron-deep: var(--saffron-deep);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-line: var(--line);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", serif;
+  --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  font-style: normal;
+}
+
+::selection {
+  background: var(--saffron);
+  color: var(--ink);
+}
+
+/* keyboard focus visibility */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
