@@ -29,7 +29,7 @@ export default function RestaurantLayout({ children }: { children: React.ReactNo
             <Link
               key={item.href}
               href={item.href}
-              className={`px-3 py-2 rounded-lg text-sm font-medium ${active ? "bg-teal text-paper" : "text-ink/70 hover:bg-paper"}`}
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${active ? "bg-teal text-paper shadow-[0_0_0_3px_rgba(23,73,74,0.2)]" : "text-ink/70 hover:bg-paper"}`}
             >
               {item.label}
             </Link>

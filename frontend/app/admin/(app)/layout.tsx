@@ -30,7 +30,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link
               key={item.href}
               href={item.href}
-              className={`px-3 py-2 rounded-lg text-sm font-medium ${active ? "bg-saffron text-ink" : "text-paper/70 hover:bg-paper/10"}`}
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${active ? "bg-saffron text-ink shadow-[0_0_0_3px_rgba(232,163,61,0.3)]" : "text-paper/70 hover:bg-paper/10"}`}
             >
               {item.label}
             </Link>

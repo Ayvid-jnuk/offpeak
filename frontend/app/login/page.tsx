@@ -91,13 +91,13 @@ export default function LoginPage() {
         <div className="flex gap-2 mb-6">
           <button
             onClick={() => { setMode("phone"); setError(null); }}
-            className={`px-4 py-2 rounded-full text-sm font-medium ${mode === "phone" ? "bg-teal text-paper" : "bg-paper-raised border border-line"}`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-150 active:scale-95 ${mode === "phone" ? "bg-teal text-paper shadow-[0_0_0_4px_rgba(23,73,74,0.22)]" : "bg-paper-raised border border-line hover:border-teal-soft"}`}
           >
             Diner (phone)
           </button>
           <button
             onClick={() => { setMode("email"); setError(null); }}
-            className={`px-4 py-2 rounded-full text-sm font-medium ${mode === "email" ? "bg-teal text-paper" : "bg-paper-raised border border-line"}`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-150 active:scale-95 ${mode === "email" ? "bg-teal text-paper shadow-[0_0_0_4px_rgba(23,73,74,0.22)]" : "bg-paper-raised border border-line hover:border-teal-soft"}`}
           >
             Restaurant / Admin
           </button>

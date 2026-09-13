@@ -27,7 +27,7 @@ export default function DinerLayout({ children }: { children: React.ReactNode })
             <Link
               key={tab.href}
               href={tab.href}
-              className={`text-xs font-medium px-3 py-1 rounded-full ${active ? "text-teal" : "text-ink/50"}`}
+              className={`text-xs font-medium px-3 py-1 rounded-full transition-all duration-150 ${active ? "text-teal bg-teal/10 shadow-[0_0_0_2px_rgba(23,73,74,0.15)]" : "text-ink/50 hover:text-ink/70"}`}
             >
               {tab.label}
             </Link>
