@@ -4,11 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { api, ApiError } from "@/lib/api";
 import { Button, Card, ErrorBanner, Input, Textarea } from "@/components/ui";
+import { OpeningHoursInput } from "@/components/OpeningHoursInput";
 
 export default function RestaurantApplicationPage() {
   const [form, setForm] = useState({
     name: "", cuisine: "", address: "", description: "", phone: "",
-    email: "", opening_hours: "", seating_capacity: "40",
+    email: "", opening_hours: "Mon-Sun 11:00-22:00", seating_capacity: "40",
     account_email: "", account_password: "",
   });
   const [error, setError] = useState<string | null>(null);
@@ -71,7 +72,7 @@ export default function RestaurantApplicationPage() {
             <Input label="Phone" value={form.phone} onChange={(e) => set("phone", e.target.value)} />
             <Input label="Public email" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} />
           </div>
-          <Input label="Opening hours" placeholder="Mon-Sun 11:00-22:00" value={form.opening_hours} onChange={(e) => set("opening_hours", e.target.value)} />
+          <OpeningHoursInput value={form.opening_hours} onChange={(v) => set("opening_hours", v)} />
 
           <div className="border-t border-line pt-4">
             <p className="text-sm font-medium mb-3">Your login (used once approved)</p>

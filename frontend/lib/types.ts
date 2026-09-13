@@ -1,5 +1,14 @@
 export type Role = "DINER" | "RESTAURANT" | "ADMIN";
 
+export interface Me {
+  id: string;
+  full_name: string | null;
+  email: string | null;
+  phone_number: string | null;
+  role: Role;
+  created_at: string;
+}
+
 export interface Restaurant {
   id: string;
   name: string;

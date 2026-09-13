@@ -7,12 +7,12 @@ export function Button({
   className = "",
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "danger" }) {
-  const base = "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  const base = "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-150 ease-out active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:active:scale-100";
   const variants: Record<string, string> = {
-    primary: "bg-teal text-paper hover:bg-teal-soft",
-    secondary: "bg-saffron text-ink hover:bg-saffron-deep",
-    ghost: "bg-transparent text-ink border border-line hover:bg-paper-raised",
-    danger: "bg-danger text-paper hover:opacity-90",
+    primary: "bg-teal text-paper hover:bg-teal-soft hover:shadow-[0_0_0_4px_rgba(23,73,74,0.22)]",
+    secondary: "bg-saffron text-ink hover:bg-saffron-deep hover:shadow-[0_0_0_4px_rgba(232,163,61,0.35)]",
+    ghost: "bg-transparent text-ink border border-line hover:bg-paper-raised hover:border-teal-soft hover:shadow-[0_0_0_4px_rgba(23,73,74,0.12)]",
+    danger: "bg-danger text-paper hover:opacity-90 hover:shadow-[0_0_0_4px_rgba(176,67,46,0.25)]",
   };
   return (
     <button className={`${base} ${variants[variant]} ${className}`} {...props}>
@@ -24,11 +24,11 @@ export function Button({
 export function LinkButton({
   href, children, variant = "primary", className = "",
 }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "ghost"; className?: string }) {
-  const base = "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors";
+  const base = "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-150 ease-out active:scale-95";
   const variants: Record<string, string> = {
-    primary: "bg-teal text-paper hover:bg-teal-soft",
-    secondary: "bg-saffron text-ink hover:bg-saffron-deep",
-    ghost: "bg-transparent text-ink border border-line hover:bg-paper-raised",
+    primary: "bg-teal text-paper hover:bg-teal-soft hover:shadow-[0_0_0_4px_rgba(23,73,74,0.22)]",
+    secondary: "bg-saffron text-ink hover:bg-saffron-deep hover:shadow-[0_0_0_4px_rgba(232,163,61,0.35)]",
+    ghost: "bg-transparent text-ink border border-line hover:bg-paper-raised hover:border-teal-soft hover:shadow-[0_0_0_4px_rgba(23,73,74,0.12)]",
   };
   return (
     <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
