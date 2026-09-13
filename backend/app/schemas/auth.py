@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel, EmailStr, Field
 
 
@@ -32,3 +33,19 @@ class SignupRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=6)
     full_name: str
+
+
+class MeOut(BaseModel):
+    id: str
+    full_name: str | None
+    email: EmailStr | None
+    phone_number: str | None
+    role: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class UpdateMeRequest(BaseModel):
+    full_name: str = Field(min_length=1, max_length=255)
